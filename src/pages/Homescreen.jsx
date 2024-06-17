@@ -20,7 +20,7 @@ function Homescreen(props) {
                     < Header video={data.results[Math.floor(Math.random() * data.results.length)]} />
                     : ""
             }
-            <div className='px-4'>
+            <div className='px-4 relative -top-32'>
                 <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} />
                 <Row title="Netflix Originals" action={fetchNetflixOriginals} selector={selectNetflixOrginals} />
             </div>

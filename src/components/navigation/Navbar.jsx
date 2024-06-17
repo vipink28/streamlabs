@@ -4,7 +4,7 @@ import NavLink from './NavLink';
 
 function Navbar(props) {
     return (
-        <nav className='bg-violet-800 text-white'>
+        <nav className='bg-gradient-to-b from-slate-950 to-transparent text-white fixed w-full z-50 transition-colors duration-300'>
             <div className='px-4 flex items-center gap-4'>
                 <div className='py-2'>
                     <Link to="/" className='text-2xl font-bold'>StreamLabs</Link>

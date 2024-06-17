@@ -19,7 +19,7 @@ function Row(props) {
     }, [])
     return (
         <div className='py-5'>
-            <h4 className='font-semibold text-xl mb-3'>{title}</h4>
+            <h4 className='text-white font-semibold text-2xl mb-5'>{title}</h4>
             <Swiper
                 spaceBetween={20}
                 slidesPerView={5}
