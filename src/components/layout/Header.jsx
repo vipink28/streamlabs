@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IMG_URL } from '../../helper/apirequests';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchHeaderDetails, selectHeaderDetails } from '../../features/common/commonSlice';
 
 function Header(props) {
-    const { video } = props;
+    const { video, platform } = props;
+    const dispatch = useDispatch();
+    const { data, error, status } = useSelector(selectHeaderDetails)
+
+    useEffect(() => {
+        if (video && platform) {
+            dispatch(fetchHeaderDetails({ platform: platform, id: video.id }))
+        }
+    }, [video, platform])
+
     return (
         <div className='h-dvh relative'>
             <img className='w-full h-full object-cover object-center' src={IMG_URL + video.backdrop_path} alt="" />

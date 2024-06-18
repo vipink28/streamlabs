@@ -4,6 +4,7 @@ import { fetchNetflixOriginals, selectNetflixOrginals } from '../features/tv/tvS
 import Header from '../components/layout/Header';
 import Row from '../components/layout/Row';
 import { fetchNowPlayingMovies, selectNowPlayingMovies } from '../features/movie/movieSlice';
+import { platformTypes } from '../helper/apirequests';
 
 function Homescreen(props) {
     const { data, status, error } = useSelector(selectNetflixOrginals);
@@ -17,7 +18,7 @@ function Homescreen(props) {
         <>
             {
                 status === "success" ?
-                    < Header video={data.results[Math.floor(Math.random() * data.results.length)]} />
+                    < Header video={data.results[Math.floor(Math.random() * data.results.length)]} platform={platformTypes.tv} />
                     : ""
             }
             <div className='px-4 relative -top-32'>
