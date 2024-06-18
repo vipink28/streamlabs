@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Homescreen from './pages/Homescreen';
 import Navbar from './components/navigation/Navbar';
 import { navScroll } from './helper';
+import Details from './pages/Details';
 
 function App() {
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Homescreen />}></Route>
+        <Route path='/details/:platform/:id' element={<Details />}></Route>
       </Routes>
     </BrowserRouter>
   );
