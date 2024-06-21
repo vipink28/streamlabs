@@ -11,7 +11,7 @@ import Card from './Card';
 
 
 function Row(props) {
-    const { title, action, selector } = props;
+    const { title, action, selector, platform } = props;
     const collection = useSelector(selector);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -30,7 +30,7 @@ function Row(props) {
                     collection.data?.results ?
                         collection.data.results.map((video) => (
                             <SwiperSlide key={video.id}>
-                                <Card video={video} />
+                                <Card video={video} platform={platform} />
                             </SwiperSlide>
                         )) : ""
                 }

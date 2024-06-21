@@ -22,8 +22,8 @@ function Homescreen(props) {
                     : ""
             }
             <div className='px-4 relative -top-32'>
-                <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} />
-                <Row title="Netflix Originals" action={fetchNetflixOriginals} selector={selectNetflixOrginals} />
+                <Row title="Now Playing Movies" action={fetchNowPlayingMovies} selector={selectNowPlayingMovies} platform={platformTypes.movie} />
+                <Row title="Netflix Originals" action={fetchNetflixOriginals} selector={selectNetflixOrginals} platform={platformTypes.tv} />
             </div>
         </>
     );
