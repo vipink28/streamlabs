@@ -12,9 +12,9 @@ function Navbar(props) {
                 {/* menu */}
                 <div className='flex items-center'>
                     <NavLink link="/">Home</NavLink>
-                    <NavLink link="/">Tv Shows</NavLink>
-                    <NavLink link="/">Movies</NavLink>
-                    <NavLink link="/">Browse By Genre</NavLink>
+                    <NavLink link="/browse/tv">Tv Shows</NavLink>
+                    <NavLink link="/browse/movie">Movies</NavLink>
+                    <NavLink link="/browsebygenre">Browse By Genre</NavLink>
                 </div>
 
                 <div className='ms-auto'>

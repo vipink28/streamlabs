@@ -5,6 +5,7 @@ import Homescreen from './pages/Homescreen';
 import Navbar from './components/navigation/Navbar';
 import { navScroll } from './helper';
 import Details from './pages/Details';
+import Browse from './pages/Browse';
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Homescreen />}></Route>
         <Route path='/details/:platform/:id' element={<Details />}></Route>
+
+        <Route path='/browse/:platform' element={<Browse />}></Route>
       </Routes>
     </BrowserRouter>
   );
