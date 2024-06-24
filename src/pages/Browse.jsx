@@ -7,6 +7,7 @@ import { fetchNowPlayingMovies, selectNowPlayingMovies } from '../features/movie
 import instance from '../helper/axios';
 import { apiRequests } from '../helper/apirequests';
 import Row from '../components/layout/Row';
+import { shuffle } from '../helper';
 
 function Browse(props) {
     const { platform } = useParams();
@@ -17,7 +18,7 @@ function Browse(props) {
 
     const fetchGenreList = async (platform) => {
         const response = await instance.get(apiRequests.getGenres(platform));
-        setGenresList(response.data.genres);
+        setGenresList(shuffle(response.data.genres));
     }
 
     useEffect(() => {
@@ -49,7 +50,8 @@ function Browse(props) {
                 {
                     genresList?.map((genre, index) => {
                         return (
-                            <div></div> // <Row />
+                            index < 6 ?
+                                <Row key={genre?.id} title={genre?.name} genre={genre} platform={platform} /> : null
                         )
                     })
                 }
