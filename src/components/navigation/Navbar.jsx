@@ -14,7 +14,7 @@ function Navbar(props) {
                     <NavLink link="/">Home</NavLink>
                     <NavLink link="/browse/tv">Tv Shows</NavLink>
                     <NavLink link="/browse/movie">Movies</NavLink>
-                    <NavLink link="/browsebygenre">Browse By Genre</NavLink>
+                    <NavLink link="/browsebygenre/movie/28">Browse By Genre</NavLink>
                 </div>
 
                 <div className='ms-auto'>

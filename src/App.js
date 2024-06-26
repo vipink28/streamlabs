@@ -6,6 +6,7 @@ import Navbar from './components/navigation/Navbar';
 import { navScroll } from './helper';
 import Details from './pages/Details';
 import Browse from './pages/Browse';
+import BrowseByGenre from './pages/BrowseByGenre';
 
 function App() {
   useEffect(() => {
@@ -17,8 +18,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Homescreen />}></Route>
         <Route path='/details/:platform/:id' element={<Details />}></Route>
-
         <Route path='/browse/:platform' element={<Browse />}></Route>
+        <Route path='/browsebygenre/:platform/:genreid' element={<BrowseByGenre />}></Route>
       </Routes>
     </BrowserRouter>
   );

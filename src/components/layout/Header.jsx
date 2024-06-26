@@ -33,7 +33,7 @@ function Header(props) {
                             <h2 className='font-display text-6xl mb-5'>{data?.name || data?.original_name || data?.title || data?.original_title}</h2>
                             <h3 className='text-4xl font-alternate text-yellow-500 mb-4'>{data?.tagline !== "" && data?.tagline}</h3>
                             <p className='text-xl'>{truncateText(data?.overview, 180)}</p>
-                            <GenresList genres={data?.genres} />
+                            <GenresList genres={data?.genres} platform={platform} />
                             <Ratings voteAverage={data?.vote_average} voteCount={data?.vote_count} />
 
                             <Link className='py-2 px-6 mt-6 inline-block rounded-full bg-slate-900 text-white' to={`/details/${platform}/${data?.id}`}>View</Link>
