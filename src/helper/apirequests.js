@@ -9,8 +9,10 @@ export const apiRequests = {
     getCollection: (platform, endpoint) => (`/${platform}/${endpoint}?api_key=${API_KEY}&language=en-US&page=1`),
     getVideoById: (platform, id) => (`/${platform}/${id}?api_key=${API_KEY}&append_to_response=videos,similar,recommendations,credits`),
     getGenres: (platform) => (`genre/${platform}/list?api_key=${API_KEY}`),
-    getByGenre: (platform, genreid) => (`/discover/${platform}?api_key=${API_KEY}&language=en-US&page=1&with_genres=${genreid}`)
+    getByGenre: (platform, genreid) => (`/discover/${platform}?api_key=${API_KEY}&language=en-US&page=1&with_genres=${genreid}`),
+    getBySearch: (platform, query) => (`/search/${platform}?api_key=${API_KEY}&language=en-US&page=1&query=${query}`)
 }
+
 
 export const platformTypes = {
     tv: "tv",

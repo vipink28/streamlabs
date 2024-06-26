@@ -7,6 +7,7 @@ import { navScroll } from './helper';
 import Details from './pages/Details';
 import Browse from './pages/Browse';
 import BrowseByGenre from './pages/BrowseByGenre';
+import Search from './pages/Search';
 
 function App() {
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/details/:platform/:id' element={<Details />}></Route>
         <Route path='/browse/:platform' element={<Browse />}></Route>
         <Route path='/browsebygenre/:platform/:genreid' element={<BrowseByGenre />}></Route>
+        <Route path='/search' element={<Search />}></Route>
       </Routes>
     </BrowserRouter>
   );
