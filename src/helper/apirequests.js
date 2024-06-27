@@ -10,7 +10,8 @@ export const apiRequests = {
     getVideoById: (platform, id) => (`/${platform}/${id}?api_key=${API_KEY}&append_to_response=videos,similar,recommendations,credits`),
     getGenres: (platform) => (`genre/${platform}/list?api_key=${API_KEY}`),
     getByGenre: (platform, genreid) => (`/discover/${platform}?api_key=${API_KEY}&language=en-US&page=1&with_genres=${genreid}`),
-    getBySearch: (platform, query) => (`/search/${platform}?api_key=${API_KEY}&language=en-US&page=1&query=${query}`)
+    getBySearch: (platform, query) => (`/search/${platform}?api_key=${API_KEY}&language=en-US&page=1&query=${query}`),
+    getSeasonList: (platform, seriesid, seasonnumber) => (`/${platform}/${seriesid}/season/${seasonnumber}?api_key=${API_KEY}`)
 }
 
 
