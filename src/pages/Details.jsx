@@ -7,6 +7,7 @@ import VideoPlayer from '../components/common/VideoPlayer';
 import Ratings from '../components/common/Ratings';
 import Card from '../components/layout/Card';
 import instance from '../helper/axios';
+import Episode from '../components/common/Episode';
 
 function Details(props) {
     const { data, error, status } = useSelector(selectVideoDetails);
@@ -30,6 +31,11 @@ function Details(props) {
             fetchSeasonList(params.platform, data?.id, data?.seasons[0].season_number)
         }
     }, [params.platform, data])
+
+    const handleSeasons = (e) => {
+        let { value } = e.target;
+        fetchSeasonList(params.platform, data?.id, value);
+    }
 
     return (
         <div className='py-24 text-white'>
@@ -75,23 +81,28 @@ function Details(props) {
                             ))
                         }
                     </div>
+                    {
+                        data?.seasons ?
+                            <div className='py-4'>
+                                <div className='flex'>
+                                    <select className='text-black' name="season" onChange={handleSeasons}>
+                                        {
+                                            data?.seasons.map((season) => (
+                                                <option value={season?.season_number}>{season?.name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
 
-                    <div className='py-4'>
-                        <div className='flex'>
-                            <select className='text-black' name="season">
-                                {
-                                    data?.seasons.map((season) => (
-                                        <option value={season?.season_number}>{season?.name}</option>
-                                    ))
-                                }
-                            </select>
-                        </div>
-
-                        <div>
-
-                        </div>
-                    </div>
-
+                                <div>
+                                    {
+                                        seasonList?.episodes.map((episode) => (
+                                            <Episode episode={episode} />
+                                        ))
+                                    }
+                                </div>
+                            </div> : ""
+                    }
                 </div>
             </div>
         </div>
